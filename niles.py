@@ -37,6 +37,12 @@ def niles(data):
         os.system("say natürlich.")
         os.system("spotify pause")
 
+    if "suche was im internet" in data:
+        os.system("say was soll ich denn suchen?")
+        thing = recordAudio().lower()
+        os.system("say ich suche im internet nach {}".format(thing))
+        webbrowser.open("https://www.google.com/search?q={}".format(thing))
+
 
 go = True
 while go:
