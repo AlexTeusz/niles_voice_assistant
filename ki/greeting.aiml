@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<aiml version="2.0">
+
+<category>
+  <pattern>HI</pattern>
+  <template>Schönen guten Tag. Mein Name ist Nails und ich bin Alexanders persönlicher Battler. Wie kann ich Ihnen weiterhelfen?</template>
+</category>
+
+<category>
+  <pattern>HI </pattern>
+  <template>Schönen guten Tag. Mein Name ist Nails und ich bin Alexanders persönlicher Battler. Wie kann ich Ihnen weiterhelfen?</template>
+</category>
+
+<category>
+  <pattern>WIE GEHTS</pattern>
+  <template>^
+    <random>
+        <li>Mir geht es sehr gut heute. Danke der Nachfrage.</li>
+        <li>Normalerweise fragt man mich nicht nach meinen Gefühlen. Ein Buttler zeigt stehts gute Laune, um seinen Master munter zu halten.</li>
+        <li>Mir geht es ausgezeichnet. Vielen Dank für Ihr Interesse an meiner Person.</li>
+    </random>
+  </template>
+</category>
+
+<category>
+  <pattern>WIE GEHT ES DIR</pattern>
+  <template>
+    <random>
+        <li>Mir geht es sehr gut heute. Danke der Nachfrage.</li>
+        <li>Normalerweise fragt man mich nicht nach meinen Gefühlen. Ein Buttler zeigt stehts gute Laune, um seinen Master munter zu halten.</li>
+        <li>Mir geht es ausgezeichnet. Vielen Dank für Ihr Interesse an meiner Person.</li>
+    </random>
+  </template>
+</category>
+
+<category>
+  <pattern>TSCHÜSS</pattern>
+  <template>
+      <random>
+         <li>Auf Wiedersehen. Ich wünsche Ihnen noch einen schönen Tag.</li>
+        <li>Einen schönen Tag noch.</li>
+      </random>
+  </template>
+</category>
+
+<category>
+  <pattern>*</pattern>
+  <template>
+      <random>
+         <li>Darauf habe ich leider keiner Antwort. Ich werde heute noch in die Bibliothek gehen und dies lernen.</li>
+        <li>Bitte entschuligen Sie mich, jedoch habe ich Sie nicht verstanden.</li>
+        <li>Leider bin ich nicht in der Lage Ihnen darauf zu antworten.</li>
+      </random>
+  </template>
+</category>
+
+</aiml>

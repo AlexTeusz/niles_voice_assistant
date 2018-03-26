@@ -1,5 +1,5 @@
 import speech_recognition as sr
-import string
+import aiml
 import webbrowser
 import os
 
@@ -33,15 +33,44 @@ def niles(data):
         os.system("say ich mach den plattenspieler an.")
         os.system("spotify play")
 
-    if "mach die musik aus" in data:
+    elif "mach die musik aus" in data:
         os.system("say natürlich.")
         os.system("spotify pause")
 
-    if "suche was im internet" in data:
+    elif "suche was im internet" in data:
         os.system("say was soll ich denn suchen?")
         thing = recordAudio().lower()
         os.system("say ich suche im internet nach {}".format(thing))
         webbrowser.open("https://www.google.com/search?q={}".format(thing))
+
+    else:
+        artificial_intelligence(data.upper())
+
+def artificial_intelligence(data):
+    BRAIN_FILE = "brain.dump"
+
+    k = aiml.Kernel()
+
+    if os.path.exists(BRAIN_FILE):
+        print("Loading from brain file: " + BRAIN_FILE)
+        k.loadBrain(BRAIN_FILE)
+    else:
+        print("Parsing aiml files")
+        k.bootstrap(learnFiles="std-startup.aiml", commands="load aiml b")
+        print("Saving brain file: " + BRAIN_FILE)
+        k.saveBrain(BRAIN_FILE)
+
+
+    i = 0
+    if i == 0:
+        # first answer after change to this func
+        response = k.respond(data)
+        print(response)
+        os.system("say {}".format(response))
+        second = recordAudio()
+        niles(second)
+        i += 1
+
 
 
 go = True
